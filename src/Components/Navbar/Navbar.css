@@ -8,14 +8,13 @@
 /* ================= NAVBAR ================= */
 .navbar {
   width: 100%;
-  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #0f5132;
-  padding: 10px 16px; /* adjusted only to prevent overflow */
+  padding: 10px 16px;
   position: relative;
-  overflow-x: hidden;
+  z-index: 1000;
 }
 
 /* ================= LOGO ================= */
@@ -25,6 +24,7 @@
   gap: 10px;
   color: white;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .nav-logo img {
@@ -72,7 +72,7 @@
   align-items: center;
   gap: 20px;
   color: white;
-  position: relative; /* REQUIRED for cart count */
+  position: relative;
 }
 
 .nav-login-cart button {
@@ -91,7 +91,6 @@
   cursor: pointer;
 }
 
-/* Cart count FIX */
 .nav-cart-count {
   background: white;
   border: 1px solid green;
@@ -114,44 +113,95 @@
 }
 
 /* ================= MOBILE ================= */
-/* ================= MOBILE NAVBAR FIX ================= */
 @media (max-width: 768px) {
-  /* Show hamburger icon */
+
+  /* Navbar flex layout */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* logo left, right container right */
+    align-items: center;
+    padding: 10px 16px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Logo stays left */
+  .nav-logo {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  /* Right container: hamburger + cart */
+  .nav-login-cart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  /* Hamburger always visible */
   .hamburger {
     display: block;
-    z-index: 2000; /* ensure it is above everything */
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    z-index: 2001; /* above drawer */
   }
 
-  /* Mobile menu */
-  .nav-menu {
-    position: fixed; /* changed from absolute to fixed */
-    top: 60px;        /* below navbar */
-    left: 0;
-    width: 100%;
-    height: calc(100% - 60px); /* full screen below navbar */
-    background-color: #0f5132;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding-top: 20px;
-    display: none; /* hide by default */
-    z-index: 1500; /* above content */
-    overflow-y: auto; /* allow scrolling if too many items */
-  }
-
-  /* Show menu when active */
-  .nav-menu.active {
-    display: flex;
-  }
-
-  /* Hide desktop login/cart */
-  .nav-login-cart {
+  /* Hide login/admin buttons on mobile */
+  .nav-login-cart .login-btn,
+  .nav-login-cart .logout-btn,
+  .nav-login-cart .admin-link {
     display: none;
   }
 
-  /* Make nav links bigger and touch-friendly */
+  /* Cart icon visible on mobile */
+  .nav-login-cart .cart-icon {
+    display: block;
+  }
+
+  /* Drawer menu */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;        /* hide offscreen initially */
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #0f5132;
+    padding: 80px 20px;  /* leave space for navbar */
+    gap: 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 2000;       /* below hamburger but above page */
+  }
+
+  /* Slide in when active */
+  .nav-menu.active {
+    left: 0;
+  }
+
+  /* Menu link styling */
   .nav-link {
     font-size: 18px;
-    padding: 12px 0;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    display: block;
+  }
+
+  /* Cart icon styling */
+  .cart-icon svg {
+    font-size: 24px;
+    color: white;
+  }
+
+  /* Cart count position */
+  .nav-cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
   }
 }
