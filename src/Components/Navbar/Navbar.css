@@ -114,31 +114,44 @@
 }
 
 /* ================= MOBILE ================= */
+/* ================= MOBILE NAVBAR FIX ================= */
 @media (max-width: 768px) {
+  /* Show hamburger icon */
   .hamburger {
     display: block;
+    z-index: 2000; /* ensure it is above everything */
   }
 
+  /* Mobile menu */
   .nav-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed; /* changed from absolute to fixed */
+    top: 60px;        /* below navbar */
     left: 0;
     width: 100%;
-    max-width: 100%;
-    background: #0f5132;
+    height: calc(100% - 60px); /* full screen below navbar */
+    background-color: #0f5132;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 20px 0;
-    display: none;
-    overflow-x: hidden;
+    padding-top: 20px;
+    display: none; /* hide by default */
+    z-index: 1500; /* above content */
+    overflow-y: auto; /* allow scrolling if too many items */
   }
 
+  /* Show menu when active */
   .nav-menu.active {
     display: flex;
   }
 
+  /* Hide desktop login/cart */
   .nav-login-cart {
     display: none;
+  }
+
+  /* Make nav links bigger and touch-friendly */
+  .nav-link {
+    font-size: 18px;
+    padding: 12px 0;
   }
 }
