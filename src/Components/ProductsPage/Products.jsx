@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import gel from "../assets/gel.png";
-import oil from "../assets/oil.png";
+import gel from "../Assets/gel.png";
+import oil from "../Assets/oil.png";
 import "./Products.css";
 
 const items = [
