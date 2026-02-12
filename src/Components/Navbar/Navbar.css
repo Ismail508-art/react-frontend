@@ -150,11 +150,11 @@
   }
 
   /* Hide login/admin buttons on mobile */
-  .nav-login-cart .login-btn,
+  /* .nav-login-cart .login-btn,
   .nav-login-cart .logout-btn,
   .nav-login-cart .admin-link {
     display: none;
-  }
+  } */
 
   /* Cart icon visible on mobile */
   .nav-login-cart .cart-icon {
