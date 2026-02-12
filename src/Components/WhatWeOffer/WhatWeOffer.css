@@ -1,0 +1,134 @@
+.offer-section {
+  padding: 40px 20px;
+  background: #f9fffc;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.offer-title {
+  color: #0b8f6a;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.offer-subtitle {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.offer-card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-6px);
+}
+
+.offer-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.offer-card h3 {
+  margin-top: 12px;
+  color: #0b8f6a;
+  font-size: 18px;
+}
+
+.offer-card p {
+  padding: 0 12px 16px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Book Now button */
+
+
+.book-btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0b8f6a;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #066b51;
+  transform: scale(1.05);
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .offer-section {
+    padding: 30px 15px;
+  }
+
+  .offer-title {
+    font-size: 24px;
+  }
+
+  .offer-subtitle {
+    font-size: 13px;
+  }
+
+  .offer-card img {
+    height: 140px;
+  }
+
+  .offer-card h3 {
+    font-size: 16px;
+  }
+
+  .offer-card p {
+    font-size: 12px;
+  }
+
+  .book-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .offer-card img {
+    height: 130px;
+  }
+
+  .offer-card h3 {
+    font-size: 15px;
+  }
+
+  .offer-card p {
+    font-size: 12px;
+  }
+
+  .book-btn {
+    width: 80%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}

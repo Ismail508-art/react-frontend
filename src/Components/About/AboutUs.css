@@ -1,0 +1,91 @@
+/* Overall Page */
+.about-container {
+  font-family: Arial, sans-serif;
+  color: #065f46; /* deep green */
+  background: #ffffff;
+  padding-bottom: 40px;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #d1fae5; /* light green */
+  padding: 40px;
+  border-bottom: 4px solid #059669;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-text h1 {
+  color: #065f46;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero-img-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  border: 4px solid #10b981;
+}
+
+/* Section Titles */
+.about-section, .services-section, .mission-section {
+  padding: 40px 20px;
+}
+
+.about-section h2,
+.services-section h2,
+.mission-section h2 {
+  color: #047857;
+  font-size: 28px;
+  border-left: 5px solid #10b981;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service-card {
+  background: #ecfdf5; /* light white-green */
+  border: 2px solid #6ee7b7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Poster Section */
+.poster-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.poster-img {
+  width: 100%;
+  max-width: 800px;
+  border: 4px solid #10b981;
+  border-radius: 10px;
+}
+
+/* Footer */
+.about-footer {
+  text-align: center;
+  padding: 20px;
+  background: #065f46;
+  color: white;
+  margin-top: 40px;
+}

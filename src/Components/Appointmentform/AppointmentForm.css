@@ -1,0 +1,147 @@
+/* ================= GLOBAL FIX ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5dc25;
+}
+
+/* ================= CONTAINER ================= */
+.appointment-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 20px auto;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow-x: hidden;
+}
+
+/* ================= FORM ================= */
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* ================= LABELS ================= */
+.appointment-form label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #28a745;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+/* ================= INPUTS ================= */
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  background: #fafafa;
+  font-size: 16px; /* prevents mobile zoom */
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* ================= FOCUS ================= */
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+  border-color: #28a745;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.4);
+}
+
+/* ================= ERROR ================= */
+.error-text {
+  color: red;
+  font-size: 13px;
+  min-height: 16px;
+}
+
+/* ================= BUTTON ================= */
+.appointment-btn {
+  width: 100%;
+  max-width: 100%;
+  background: #28a745;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.appointment-btn:hover {
+  background: #218838;
+}
+
+/* ================= SUCCESS ================= */
+.success-message {
+  color: green;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 480px) {
+  .appointment-container {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 14px;
+  }
+}
+
+/* ================= TABLET ================= */
+@media (min-width: 768px) {
+  .appointment-container {
+    padding: 22px;
+  }
+
+  .appointment-form label {
+    font-size: 15px;
+  }
+
+  .appointment-form input,
+  .appointment-form select,
+  .appointment-form textarea {
+    font-size: 15px;
+  }
+}
+.appointment-note {
+  background: #fff8e1;
+  border: 1px solid #f0c36d;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.appointment-note ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+

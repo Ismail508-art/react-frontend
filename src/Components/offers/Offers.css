@@ -1,0 +1,11 @@
+.offers {
+    display: flex;
+    height: 25vh;
+    margin-top: 5px;
+    
+    
+}
+.offers img{
+    width: 100%;
+    height :250px;
+}

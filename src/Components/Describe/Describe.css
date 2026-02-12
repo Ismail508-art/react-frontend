@@ -1,0 +1,61 @@
+.description{
+  display: flex;
+  align-items: center; 
+  background: linear-gradient(to bottom, #E6FFE6, #FFFFFF);
+  overflow: hidden; /* ✅ needed for walk-in */
+  /* margin: 0;
+  height: 100%; */
+}
+
+.left-desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 50%;
+  gap: 20px;
+}
+
+.right-desc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 50%;
+  padding-top: 35px;
+  position: relative; /* ✅ required for SVG positioning */
+}
+
+
+
+.right-desc>img{
+  border: 1.5px solid green;
+  border-radius: 50%;
+  z-index: 1; /* ✅ keeps logo above */
+}
+.one-stop-text {
+  font-size: 18px;
+  color: #2e7d32;
+  opacity: 0;
+  animation: textReveal 1s ease forwards;
+  animation-delay: 2s; /* appears after 2 seconds */
+}
+
+/* keyframe animation */
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .description{
+    flex-direction: column;
+    text-align: center;
+  }
+}

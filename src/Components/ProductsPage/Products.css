@@ -1,0 +1,147 @@
+/* --- Global Fix (IMPORTANT) --- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* --- Page Container --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: "Poppins", sans-serif;
+  background: #f4fff7;
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1b7f40;
+}
+
+/* --- Products Wrapper --- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+
+/* --- Product Card --- */
+.product-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #dff5e3;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+/* --- Product Image --- */
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+/* --- Product name + price --- */
+.product-card h3 {
+  margin: 6px 0 4px;
+  font-size: 1.15rem;
+  color: #146c34;
+  font-weight: 600;
+}
+
+.product-card p {
+  color: #4d7c5a;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* --- Quantity + Cart --- */
+.quantity-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quantity-cart span {
+  font-size: 0.95rem;
+  background: #e8f9ef;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid #c8ebd1;
+}
+
+/* Buttons */
+.quantity-cart button {
+  padding: 8px 14px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.quantity-cart button:hover {
+  background-color: #1e8d38;
+}
+
+/* Add to cart emphasis */
+.quantity-cart button:last-child {
+  background-color: #2ecc71;
+  font-weight: 600;
+}
+
+.quantity-cart button:last-child:hover {
+  background-color: #24b062;
+}
+
+/* --- Mobile Optimization --- */
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .quantity-cart {
+    gap: 8px;
+  }
+
+  .quantity-cart button {
+    width: 100%;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 420px) {
+  .container {
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}

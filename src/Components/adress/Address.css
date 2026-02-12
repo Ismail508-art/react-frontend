@@ -1,0 +1,21 @@
+.visit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px solid green;
+     background: linear-gradient(to bottom, #E6FFE6, #FFFFFF);
+     border: none;
+}
+.visit h2{
+    color: green;
+    font-weight: 600;
+    font-size: 30px;
+}
+.visit p{
+    text-align: center;
+    font-weight: 500;
+
+}

@@ -1,0 +1,142 @@
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f7fafc; /* light gray */
+  padding: 20px;
+}
+
+/* Card */
+.login-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.login-card h2 {
+  text-align: center;
+  color: #2f855a;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Form groups */
+.login-card .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.login-card .form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #2f855a;
+}
+
+.login-card .form-group input {
+  padding: 10px 12px;
+  border: 1.5px solid #c6f6d5;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-card .form-group input:focus {
+  border-color: #2f855a;
+}
+
+/* Password wrapper */
+.password-group .password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  color: #2f855a;
+  font-size: 16px;
+}
+
+/* Submit button */
+.login-card .submit-btn {
+  width: 100%;
+  background-color: #2f855a;
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.login-card .submit-btn:hover {
+  background-color: #276749;
+}
+
+/* Error messages */
+.login-card .error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+/* Switch link */
+.switch-link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.switch-link a {
+  color: #2f855a;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.switch-link a:hover {
+  color: #276749;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 25px 20px;
+  }
+
+  .login-card .submit-btn {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .login-card h2 {
+    font-size: 22px;
+  }
+}
+.admin-link {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.admin-link a {
+  color: darkred;
+  font-weight: 600;
+}
+
