@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 // Import your downloaded copyright-free images
-import physioImg from "../assets/physiotherapy.png";
-import cuppingImg from "../assets/cupping.png";
-import labImg from "../assets/lab.png";
-import dieticianImg from "../assets/dietician.png";
+import physioImg from "../Assets/physiotherapy.png";
+import cuppingImg from "../Assets/cupping.png";
+import labImg from "../Assets/lab.png";
+import dieticianImg from "../Assets/dietician.png";
 
 import "./WhatWeOffer.css";
 
