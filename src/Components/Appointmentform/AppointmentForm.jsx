@@ -258,6 +258,14 @@ const handleSubmit = async (e) => {
         </body>
       </html>
     `);
+    // / ✅ Show alert and redirect
+setAlert({
+  message: "Appointment booked successfully! Complete payment in popup.",
+  type: "success",
+});
+
+// Redirect to home after 1.5 seconds
+setTimeout(() => navigate("/"), 1500);
 
     setAlert({
       message: "Appointment booked! Complete payment to download slip.",
