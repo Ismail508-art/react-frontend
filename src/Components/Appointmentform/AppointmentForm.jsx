@@ -185,7 +185,7 @@ const handleSubmit = async (e) => {
   }
 
   try {
-    // 1️⃣ Save appointment with payment PENDING
+    // Save appointment with payment PENDING
     const saveRes = await fetch(`${import.meta.env.VITE_API_URL}/api/appointments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -194,7 +194,11 @@ const handleSubmit = async (e) => {
 
     const appointment = await saveRes.json();
 
-    // 2️⃣ Open UPI Payment popup
+    // Allow popup to access alert & navigate
+    window.setAlert = setAlert;
+    window.navigate = navigate;
+
+    // Open UPI Payment popup
     const qrWindow = window.open("", "UPI Payment", "width=420,height=650");
 
     const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
@@ -249,8 +253,20 @@ const handleSubmit = async (e) => {
                 return res.json(); 
               })
               .then(() => {
+                // Open PDF slip
                 window.open("${import.meta.env.VITE_API_URL}/api/appointments/slip/${appointment.id}");
-                setTimeout(() => window.close(), 2000);
+                
+                // ✅ Show alert on main page
+                window.opener.setAlert({
+                  message: "Appointment booked successfully! Payment confirmed.",
+                  type: "success",
+                });
+
+                // ✅ Redirect main page after 1.5s
+                setTimeout(() => window.opener.navigate("/"), 1500);
+
+                // Close popup
+                window.close();
               })
               .catch(() => alert('Payment update failed. Try again.'));
             }
@@ -258,22 +274,6 @@ const handleSubmit = async (e) => {
         </body>
       </html>
     `);
-    // / ✅ Show alert and redirect
-setAlert({
-  message: "Appointment booked successfully! Complete payment in popup.",
-  type: "success",
-});
-
-// Redirect to home after 1.5 seconds
-setTimeout(() => navigate("/"), 1500);
-
-    setAlert({
-      message: "Appointment booked! Complete payment to download slip.",
-      type: "success",
-    });
-
-    navigate("/appointments");
-
   } catch (err) {
     console.error(err);
     setAlert({
@@ -282,6 +282,7 @@ setTimeout(() => navigate("/"), 1500);
     });
   }
 };
+
 
 
 
