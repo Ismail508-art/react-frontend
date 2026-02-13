@@ -2,7 +2,7 @@ import logo from '../Assets/logo.png'
 import './Describe.css'
 
 const Describe = () => {
-   console.log(import.meta.env.VITE_API_URL);
+  
   return (
     <div className='description'>
 
@@ -12,6 +12,7 @@ const Describe = () => {
         <p className="one-stop-text">
           One Stop Solution for Physiotherapy, Cupping, Diet & Lab Tests
         </p>
+         
       </div>
 
       <div className='right-desc'>
