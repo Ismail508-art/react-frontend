@@ -40,6 +40,8 @@
   animation-delay: 2s; /* appears after 2 seconds */
 }
 
+
+
 /* keyframe animation */
 @keyframes textReveal {
   from {

@@ -127,3 +127,13 @@ h2 {
   background: #a7f3d0;
   cursor: not-allowed;
 }
+@media (max-width: 480px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-actions {
+    margin-top: 10px;
+  }
+}

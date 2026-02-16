@@ -1,6 +1,6 @@
 import logo from '../Assets/logo.png'
 import './Describe.css'
-
+import { Link } from "react-router-dom";
 const Describe = () => {
   
   return (
@@ -13,6 +13,11 @@ const Describe = () => {
           One Stop Solution for Physiotherapy, Cupping, Diet & Lab Tests
         </p>
          
+         {/* Book Now Button */}
+        <Link to="/appointment" className="book-btn">
+          Book Appointment
+        </Link>
+
       </div>
 
       <div className='right-desc'>
