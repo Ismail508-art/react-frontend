@@ -27,38 +27,42 @@ const ResetPassword = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    setErrors(validationErrors);
-    setAlertMsg(null);
+  e.preventDefault();
+  const validationErrors = validate();
+  setErrors(validationErrors);
+  setAlertMsg(null);
 
-    if (Object.keys(validationErrors).length === 0) {
-      try {
-        const res = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/auth/reset-password`,
-  {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ token, password }),
-  }
-);
+  if (Object.keys(validationErrors).length === 0) {
+    try {
+      // 🔹 Build full URL
+      const apiUrl = `${import.meta.env.VITE_API_URL}/api/auth/reset-password`;
+      console.log("Reset Password URL:", apiUrl);
+      console.log("Request Body:", { token, password });
 
+      const res = await fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token, password }),
+      });
 
-        const text = await res.text();
+      // 🔹 Log status and response for debugging
+      console.log("Response status:", res.status);
+      const text = await res.text();
+      console.log("Response body:", text);
 
-        if (res.ok) {
-          setAlertMsg({ success: true, message: text });
-          // redirect after 2s
-          setTimeout(() => navigate("/login"), 2000);
-        } else {
-          setAlertMsg({ success: false, message: text });
-        }
-      } catch (err) {
-        console.error(err);
-        setAlertMsg({ success: false, message: "Something went wrong" });
+      if (res.ok) {
+        setAlertMsg({ success: true, message: text });
+        setTimeout(() => navigate("/login"), 2000);
+      } else {
+        setAlertMsg({ success: false, message: text });
       }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setAlertMsg({ success: false, message: "Something went wrong" });
     }
-  };
+  }
+};
+
 
   if (!token) {
     return (
