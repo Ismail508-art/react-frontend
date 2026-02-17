@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css";
 
@@ -6,32 +6,31 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
   const [appointments, setAppointments] = useState([]);
 
-  // ✅ GET ADMIN FROM LOCALSTORAGE
-  const admin = JSON.parse(localStorage.getItem("admin"));
+  // ✅ READ FROM "user" (NOT "admin")
+  const admin = JSON.parse(localStorage.getItem("user"));
 
   // 🔐 ADMIN GUARD
   useEffect(() => {
-    if (!admin || !admin.admin) {
+    if (!admin || !admin.isAdmin) {
       navigate("/login");
     }
   }, [admin, navigate]);
 
   // ⛔ STOP RENDER IF NOT ADMIN
-  if (!admin || !admin.admin) {
+  if (!admin || !admin.isAdmin) {
     return null;
   }
 
   // 📥 FETCH APPOINTMENTS
   useEffect(() => {
-  fetch(`${import.meta.env.VITE_API_URL}/api/appointments`)
-    .then((res) => {
-      if (!res.ok) throw new Error("Forbidden");
-      return res.json();
-    })
-    .then((data) => setAppointments(data))
-    .catch((err) => console.error("Appointments error:", err));
-}, []);
-
+    fetch(`${import.meta.env.VITE_API_URL}/api/appointments`)
+      .then((res) => {
+        if (!res.ok) throw new Error("Forbidden");
+        return res.json();
+      })
+      .then((data) => setAppointments(data))
+      .catch((err) => console.error("Appointments error:", err));
+  }, []);
 
   return (
     <div className="admin-container">
