@@ -12,7 +12,7 @@ const AdminDashboard = () => {
   // 🔐 ADMIN GUARD
   useEffect(() => {
     if (!admin || !admin.admin) {
-      navigate("/admin/login");
+      navigate("/login");
     }
   }, [admin, navigate]);
 
